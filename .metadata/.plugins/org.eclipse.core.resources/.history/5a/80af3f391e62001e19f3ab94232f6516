@@ -62,7 +62,7 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 			}
 			else {
 				System.out.println(id + " Not exist!");
-				return null;
+				
 			}
 			
 			

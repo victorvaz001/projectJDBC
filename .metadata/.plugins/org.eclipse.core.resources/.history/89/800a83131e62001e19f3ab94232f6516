@@ -21,7 +21,7 @@ public class Program {
 			
 		System.out.println();
 		System.out.println("Test 2: findById");
-		Employee empFindById = employeeDao.findById(4);
+		Employee empFindById = employeeDao.findById(1);
 		System.out.println(empFindById);
 		}
 	}

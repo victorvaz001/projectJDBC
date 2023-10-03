@@ -60,16 +60,15 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 				Employee emp = instantiateEmployee(rs, sec);
 				return emp;
 			}
-			else {
-				System.out.println(id + " Not exist!");
-				return null;
-			}
-			
+			return null;
 			
 		}
 		catch (SQLException e) {
 			throw new DbException("Error: " + e.getMessage());
 		}
+		
+		
+		return null;
 	}
 
 	@Override

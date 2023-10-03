@@ -61,7 +61,7 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 				return emp;
 			}
 			else {
-				System.out.println(id + " Not exist!");
+				System.out.println(id + "Not exist!");
 				return null;
 			}
 			

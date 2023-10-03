@@ -51,25 +51,13 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 					+ "FROM employee INNER JOIN sector "
 					+ "ON employee.sectorId = sector.Id "
 					+ "WHERE employee.id = ?");
-			
-			st.setInt(1, id);
-			
-			rs = st.executeQuery();
-			if (rs.next()) {
-				Sector sec = instantiateSector(rs);
-				Employee emp = instantiateEmployee(rs, sec);
-				return emp;
-			}
-			else {
-				System.out.println(id + " Not exist!");
-				return null;
-			}
-			
-			
 		}
 		catch (SQLException e) {
 			throw new DbException("Error: " + e.getMessage());
 		}
+		
+		
+		return null;
 	}
 
 	@Override
