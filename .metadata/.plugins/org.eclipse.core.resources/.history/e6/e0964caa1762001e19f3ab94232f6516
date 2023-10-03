@@ -1,0 +1,6 @@
+package model.dao;
+
+public interface EmployeeDao {
+	
+	void insert(Employee obj)
+}

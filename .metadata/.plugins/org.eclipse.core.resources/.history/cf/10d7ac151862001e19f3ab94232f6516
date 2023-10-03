@@ -1,0 +1,12 @@
+package model.impl;
+
+import java.sql.Connection;
+
+public class EmployeeDaoJDBC implements EmployeeDaoJDBC {
+	
+	private static Connection conn = null;
+	
+	public EmployeeDaoJDBC (Connection conn) {
+		this.conn = conn;
+	}
+}
