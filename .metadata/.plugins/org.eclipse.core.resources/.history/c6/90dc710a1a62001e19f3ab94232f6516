@@ -56,7 +56,6 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 	private static Employee instantiateEmployee(ResultSet rs, Sector sec) throws SQLException {
 		
 		Employee emp = new Employee();
-		
 		emp.setId(rs.getInt("id"));
 		emp.setName(rs.getString("name"));
 		emp.setSalary(rs.getDouble("salary"));
@@ -66,12 +65,8 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 		return emp;
 	}
 	
-	private static Sector instantiateSector(ResultSet rs) throws SQLException {
+	private static Sector instantiateSector(ResultSet rs) {
 		
-		Sector sec = new Sector();
-		
-		sec.setId(rs.getInt("sectorId"));
-		sec.setName(rs.getString("SecName"));
 		return sec;
 	}
 }

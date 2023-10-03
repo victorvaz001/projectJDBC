@@ -2,7 +2,6 @@ package model.impl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 import model.dao.EmployeeDao;
@@ -53,25 +52,11 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 		return null;
 	}
 	
-	private static Employee instantiateEmployee(ResultSet rs, Sector sec) throws SQLException {
+	private static Employee instantiateEmployee(ResultSet rs, Sector sec) {
 		
 		Employee emp = new Employee();
 		
-		emp.setId(rs.getInt("id"));
-		emp.setName(rs.getString("name"));
-		emp.setSalary(rs.getDouble("salary"));
-		emp.setJobTitle(rs.getString("jobTitle"));
-		emp.setBirthDate(rs.getDate("birthDate"));
-		emp.setSector(sec);				
 		return emp;
 	}
 	
-	private static Sector instantiateSector(ResultSet rs) throws SQLException {
-		
-		Sector sec = new Sector();
-		
-		sec.setId(rs.getInt("sectorId"));
-		sec.setName(rs.getString("SecName"));
-		return sec;
-	}
 }
