@@ -15,7 +15,8 @@ public class DB {
 	
 	public static Connection getConnection() {
 		
-		if (conn == null) {			
+		if (conn == null) {
+			
 			try {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
@@ -26,7 +27,6 @@ public class DB {
 				throw new DbException("Error: " + e.getMessage());
 			}
 		}
-		return conn;
 	}
 	
 	public static void closeConnection() {

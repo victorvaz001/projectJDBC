@@ -15,18 +15,18 @@ public class DB {
 	
 	public static Connection getConnection() {
 		
-		if (conn == null) {			
+		if (conn == null) {
+			
 			try {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
-				
+				return conn;
 			}
 			catch (SQLException e) {
 				throw new DbException("Error: " + e.getMessage());
 			}
 		}
-		return conn;
 	}
 	
 	public static void closeConnection() {
