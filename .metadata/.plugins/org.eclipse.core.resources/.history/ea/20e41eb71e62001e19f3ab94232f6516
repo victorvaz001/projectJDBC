@@ -55,11 +55,10 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 			st.setInt(1, id);
 			
 			rs = st.executeQuery();
-			
 			if (rs.next()) {
 				Sector sec = instantiateSector(rs);
-				Employee obj = instantiateEmployee(rs, sec);
-				return obj;
+				Employee emp = instantiateEmployee(rs, sec);
+				return emp;
 			}
 			return null;						
 		}

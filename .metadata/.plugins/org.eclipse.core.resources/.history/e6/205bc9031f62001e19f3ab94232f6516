@@ -19,7 +19,6 @@ public class Program {
 		for (Employee emp : list) {
 			System.out.println(emp);
 		}
-		
 		System.out.println();
 		System.out.println("Test 2: findById");
 		Employee empFindById = employeeDao.findById(4);
