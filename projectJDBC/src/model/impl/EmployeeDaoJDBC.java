@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import db.DB;
 import db.DbException;
 import model.dao.EmployeeDao;
 import model.entities.Employee;
@@ -24,7 +26,37 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 
 	@Override
 	public void insert(Employee obj) {
-		// TODO Auto-generated method stub
+		
+		PreparedStatement st = null;
+		
+		try {
+			
+			st = conn.prepareStatement(
+					"INSERT INTO employee "
+					+ "	(name, salary, jobTitle, birthDate, sectorId) "
+					+ "	VALUES (?, ?, ?, ?, ?)",
+					+ Statement.RETURN_GENERATED_KEYS);
+			
+			st.setString(1, obj.getName());
+			st.setDouble(2, obj.getSalary());
+			st.setString(3, obj.getJobTitle());
+			st.setDate(4, new java.sql.Date(obj.getBirthDate().getTime()));
+			st.setInt(5, obj.getSector().getId());
+			
+			int rowsAffected = st.executeUpdate();
+			
+			if (rowsAffected > 0) {
+				ResultSet rs = st.getGeneratedKeys();
+				if (rs.next()) {
+					int id = rs.getInt(1);
+					obj.setId(id);
+				}
+				DB.closeResultSet(rs);
+			}
+		}
+		catch (SQLException e) {
+			throw new DbException("Error: " + e.getMessage());
+		}
 		
 	}
 

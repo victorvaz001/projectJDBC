@@ -1,8 +1,0 @@
-package model.dao;
-
-public class DaoFactory {
-	
-	public static EmployeeDao createEmployeeDaoJDBC() {
-		
-	}
-}

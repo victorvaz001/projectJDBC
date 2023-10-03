@@ -1,8 +1,0 @@
-package model.impl;
-
-public class EmployeeDao {
-	
-	public EmployeeDao (Connection conn) {
-		
-	}
-}

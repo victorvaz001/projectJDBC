@@ -1,4 +1,0 @@
-user=developer
-password=sua-senha
-dburl=jdbc:mysql://localhost:3306/informar-nome-do-banco
-useSSL=false

@@ -1,7 +1,0 @@
-package model.dao;
-
-public interface EmployeeDao {
-	
-	void insert(Employee obj);
-	void delete(Integer obj);
-}

@@ -26,3 +26,5 @@ replay_pid*
 db.properties
 
 MySQL Connector
+
+.metadata/
