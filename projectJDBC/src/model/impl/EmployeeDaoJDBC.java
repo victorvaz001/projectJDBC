@@ -57,6 +57,9 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 		catch (SQLException e) {
 			throw new DbException("Error: " + e.getMessage());
 		}
+		finally {
+			DB.closeStatement(st);
+		}
 		
 	}
 
@@ -97,6 +100,10 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 		}
 		catch (SQLException e) {
 			throw new DbException("Error: " + e.getMessage());
+		}
+		finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
 		}
 	}
 
@@ -140,6 +147,10 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 		}
 		catch (SQLException e) {
 			throw new DbException("Error: " + e.getMessage());
+		}
+		finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
 		}
 	}
 	
