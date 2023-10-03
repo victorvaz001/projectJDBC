@@ -1,0 +1,12 @@
+package model.entities;
+
+public class Sector {
+	
+	private Integer id;
+	private String name;
+	
+	public Sector() {
+	}
+	
+	
+}
