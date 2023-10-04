@@ -27,10 +27,12 @@ Criar um projeto para aceso ao banco de dados com a api padrão JDBC, onde será
 - Baixar o **conector.jar** do mysql(https://dev.mysql.com/downloads/connector/j/) ou outro banco
 - Criar o projeto java
 - Na raiz do proejto, criar um arquivo db.properties, colocar dados de conexão abaixo
+
   user=informar-usuário-do-banco
   password=sua-senha
   dburl=jdbc:mysql://localhost:3306/informar-nome-do-banco
   useSSL=false
+
 - Adicionar o jar ao projeto
 - Criar um banco chamado company
 - Criar as tabelas Employee e Sector conforme diagrama de entidades
