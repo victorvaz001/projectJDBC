@@ -12,6 +12,7 @@ import java.util.Map;
 
 import db.DB;
 import db.DbException;
+import db.DbIntengrityException;
 import model.dao.EmployeeDao;
 import model.entities.Employee;
 import model.entities.Sector;
@@ -93,7 +94,30 @@ public class EmployeeDaoJDBC implements EmployeeDao {
 
 	@Override
 	public void delete(Integer obj) {
-		// TODO Auto-generated method stub
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement(
+					"DELETE FROM employee "
+					+ "WHERE id = ? ");
+			
+			st.setInt(1, obj);
+			
+			int rowsAffected = st.executeUpdate();
+			
+			if (rowsAffected == 0) {
+				throw new SQLException("id " + obj + " Not exist! No rows were affected");
+			}
+			else {
+				System.out.println("Done! Rows were affetecd!");
+			}
+		}
+		catch (SQLException e) {
+			throw new DbIntengrityException("Error: " + e.getMessage());
+		} 
+		finally {
+			DB.closeStatement(st);
+		}
 		
 	}
 

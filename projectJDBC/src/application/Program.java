@@ -46,5 +46,12 @@ public class Program {
 		emp.setBirthDate(birthDate2);
 		employeeDao.update(emp);
 		System.out.println("Update sucess!");*/
+		
+		System.out.println();
+		System.out.println("Test 4: delete");
+		Employee emp = new Employee();
+		//emp = employeeDao.findById(28);
+		employeeDao.delete(28);
+		
 	}
 }
