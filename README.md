@@ -3,7 +3,7 @@
 # Objetivo
 Criar um projeto para aceso ao banco de dados com a api padrão JDBC, onde será disponibilzado as quatros operacoes basicas de persistencia(insert, delete, update e read)
 
-# Padrão do projeto
+# Padrão de projeto
 - Factory -> Para criar os objetos da classe que implementa a interface
 - Dao -> Para separar a logica de acesso a dados -> InterfaceDao e Entidades
 
